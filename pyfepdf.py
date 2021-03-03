@@ -944,7 +944,8 @@ class FEPDF:
         fact = self.factura
         cuit = ''.join([c for c in self.CUIT if c.isdigit()])   # sólo numeros
         f = fact['fecha_cbte']
-        fecha = "-".join([f[0:4], f[4:6], f[6:9]])              # 'AAAA-MM-DD'
+        #fecha = "-".join([f[0:4], f[4:6], f[6:9]])              # 'AAAA-MM-DD'
+        fecha = f
 
         # generar el código QR para esta factura:
         url = pyqr.GenerarImagen(fecha=fecha,
